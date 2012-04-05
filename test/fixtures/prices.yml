@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price: 
+  festival_id: 1
+
+two:
+  price: 
+  festival_id: 1

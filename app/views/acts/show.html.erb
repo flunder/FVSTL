@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @act.name %>
+</p>
+
+<% @act.festivals.each do |festival| %>
+	<div><%= link_to festival.title, festival %>
+<% end %>
+
+<br/>
+
+<%= link_to 'Edit', edit_act_path(@act) %> |
+<%= link_to 'Back', acts_path %>

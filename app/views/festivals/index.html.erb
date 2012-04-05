@@ -1,0 +1,26 @@
+<h1>Listing festivals</h1>
+
+<div>
+	<% @festivals.each do |festival| %>
+		<div class="row">
+			<%= image_tag(festival.photo.url(:thumb)) %>
+			<h2><%= festival.title %></h2>
+			<div><%= link_to festival.website, festival.website %></div>
+			<div><%= festival.desc %></div>
+			<div><%= festival.country %></div>								
+			<div><%= festival.city %></div>					
+			<div><%= festival.from %></div>					
+			<div><%= festival.to %></div>					
+			<div><%= festival.country %></div>
+			<ul class="acts">
+				<% festival.acts.each do |act| %>																		
+					<li><%= link_to act.name, act %></li>
+				<% end %>
+			<ul>	
+		</div>
+	<% end %>
+</div>
+
+<br />
+
+<%= link_to 'New Festival', new_festival_path %>

@@ -11,7 +11,7 @@ require 'xml'
 
 class Festival < ActiveRecord::Base
   
-  has_and_belongs_to_many :acts, :uniq => true
+  has_and_belongs_to_many :acts
   has_many :prices
   
   # PAPERCLIP ------------------------------------------
@@ -130,6 +130,8 @@ class Festival < ActiveRecord::Base
                   @act3 = product3
                   # puts "act: #{@act3}" 
   
+                  
+  
                   #new_acts = [] 
                   #if existing = Act.find_by_name(@act3) 
                   #  new_acts << existing
@@ -137,12 +139,17 @@ class Festival < ActiveRecord::Base
                   #  new_acts << @act3
                   #end
                   
-                  @justCreatedFestival.add_act(@act3)
-                  @justCreatedFestival.save
-
-                  
                   # org
                   #@justCreatedFestival.acts.create( {:name => @act3 })
+                  
+                  @myAct = Act.find_by_name(@act3)
+                  
+                  if @myAct                  
+                    @justCreatedFestival.acts << @myAct
+                  else 
+                    @justCreatedFestival.acts.create( {:name => @act3 })
+                  end
+                  
                   
               end
             end

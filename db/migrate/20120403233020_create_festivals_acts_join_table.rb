@@ -6,7 +6,7 @@ class CreateFestivalsActsJoinTable < ActiveRecord::Migration
     end
     
     # ??
-    add_index :acts_festivals, [ :festival_id , :act_id ], :unique => true
+    # add_index :acts_festivals, [ :festival_id , :act_id ], :unique => true
     
   end
 

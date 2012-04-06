@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(:version => 20120403233020) do
     t.integer "act_id"
   end
 
-  add_index "acts_festivals", ["festival_id", "act_id"], :name => "index_acts_festivals_on_festival_id_and_act_id", :unique => true
-
   create_table "festivals", :force => true do |t|
     t.string   "title"
     t.string   "website"

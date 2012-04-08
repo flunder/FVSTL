@@ -30,6 +30,10 @@ class Festival < ActiveRecord::Base
                     :default_url => "/images/noimage.png",
                     :default_style => :thumb
   # // PAPERCLIP ----------------------------------------
+  
+  def self.repack(string)
+    return string.unpack('U*').pack('U*')
+  end
    
   def self.import_from_festivalsearcher
     
@@ -76,20 +80,20 @@ class Festival < ActiveRecord::Base
         
         if product.link && (i < 10)
                   
-            @title = product.title 
+            @title = repack(product.title)
             @href = 'http://www.festivalsearcher.com/' << product.link
-            @country = product.country
+            @country = repack(product.country)
           
             puts "working on #{product.title}"
             
             uri = URI.parse(@href)
 
             scraper2.scrape(uri, :parser=>:html_parser).each_with_index do |product2,i2|
-                @title2 = product2.title
+                @title2 = repack(product2.title)
                 @from2 = (product2.fromdate << ' 2012').to_date if @from2
                 @to2 = product2.todate.to_date unless !@to2
                 @website = product2.website         
-                @city = product2.city                     
+                @city = repack(product2.city)
                 @fbUrl = product2.fbUrl      
                 @estab = product2.estab   
                 @image = 'http://www.festivalsearcher.com/' << product2.imageSrc 
@@ -128,7 +132,7 @@ class Festival < ActiveRecord::Base
             if scraper3.scrape(uri, :parser=>:html_parser)
                 scraper3.scrape(uri, :parser=>:html_parser).each_with_index do |product3,i|
                 
-                    @act3 = product3.unpack('U*').pack('U*')
+                    @act3 = repack(product3)
                     @myAct = Act.find_by_name(@act3)
                   
                     if @myAct                  

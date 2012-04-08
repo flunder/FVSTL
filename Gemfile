@@ -23,11 +23,7 @@ gem 'twitter'
 gem 'libxml-ruby'
 gem 'json'
 gem 'memcache-client'
-<<<<<<< HEAD
 gem 'tidy_ffi'
-
-=======
->>>>>>> cc53c2afc886315af96501ed8dd828e5e9a66f28
 
 # Gems used only for assets and not required
 # in production environments by default.

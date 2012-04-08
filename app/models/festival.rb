@@ -78,7 +78,7 @@ class Festival < ActiveRecord::Base
 
       scraper.scrape(uri, :parser=>:html_parser).each_with_index do |product,i|
         
-        if product.link && (i < 10)
+        if product.link
                   
             @title = repack(product.title)
             @href = 'http://www.festivalsearcher.com/' << product.link

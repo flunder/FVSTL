@@ -4,6 +4,7 @@ require 'rubygems'
 require 'htmlentities'
 require 'open-uri'
 require 'scrapi'
+require 'tidy_ffi'
 require 'iconv'
 require 'csv'
 require 'cgi'
@@ -19,7 +20,6 @@ class Festival < ActiveRecord::Base
   attr_accessor :image_remote_url
 
   # before_create :dblcheck_file_name
-  before_create :dblcheck_file_name
   before_validation :download_remote_image, :if => :image_url_provided?
   validates_presence_of :image_remote_url, :if => :image_url_provided?, :message => 'is invalid or inaccessible'  
   
@@ -30,6 +30,10 @@ class Festival < ActiveRecord::Base
                     :default_url => "/images/noimage.png",
                     :default_style => :thumb
   # // PAPERCLIP ----------------------------------------
+  
+  def self.repack(string)
+    return string.unpack('U*').pack('U*')
+  end
    
   def self.import_from_festivalsearcher
     
@@ -72,24 +76,24 @@ class Festival < ActiveRecord::Base
   
       uri = URI.parse('http://www.festivalsearcher.com/festivalslist.aspx')
 
-      scraper.scrape(uri).each_with_index do |product,i|
+      scraper.scrape(uri, :parser=>:html_parser).each_with_index do |product,i|
         
-        if product.link && (i < 10)
+        if product.link
                   
-            @title = product.title 
+            @title = repack(product.title)
             @href = 'http://www.festivalsearcher.com/' << product.link
-            @country = product.country
+            @country = repack(product.country)
           
             puts "working on #{product.title}"
             
             uri = URI.parse(@href)
 
-            scraper2.scrape(uri).each_with_index do |product2,i2|
-                @title2 = product2.title
+            scraper2.scrape(uri, :parser=>:html_parser).each_with_index do |product2,i2|
+                @title2 = repack(product2.title)
                 @from2 = (product2.fromdate << ' 2012').to_date if @from2
                 @to2 = product2.todate.to_date unless !@to2
                 @website = product2.website         
-                @city = product2.city                     
+                @city = repack(product2.city)
                 @fbUrl = product2.fbUrl      
                 @estab = product2.estab   
                 @image = 'http://www.festivalsearcher.com/' << product2.imageSrc 
@@ -97,7 +101,8 @@ class Festival < ActiveRecord::Base
               
                 # price
                 
-                puts "counter #{i}"              
+                puts "counter #{i}"  
+                puts "link: #{uri}"            
                 puts @title2
                 puts "dates: #{@from2} - #{@to2}"
                 puts "website: #{@website}"
@@ -108,50 +113,35 @@ class Festival < ActiveRecord::Base
                 puts "capacity: #{@capacity}" 
                 puts    
           
-               create!(
-                   :title        => @title2,
-                   :website      => @website,
-                   :desc         => '',
-                   :country      => @country,
-                   :city         => @city,                 
-                   :from         => @from2,                     
-                   :to           => @to2,  
-                   :imageSrc     => @image,
-                   :image_url    => @image,                                    
-              )
+                create!(
+                    :title        => @title2,
+                    :website      => @website,
+                    :desc         => '',
+                    :country      => @country,
+                    :city         => @city,                 
+                    :from         => @from2,                     
+                    :to           => @to2,  
+                    :imageSrc     => @image,
+                    :image_url    => @image,                                    
+                )
 
-              @justCreatedFestival = Festival.find_by_title(@title2)
+                @justCreatedFestival = Festival.find_by_title(@title2)
               
             end
             
-            if scraper3.scrape(uri)
-              scraper3.scrape(uri).each_with_index do |product3,i|
+            if scraper3.scrape(uri, :parser=>:html_parser)
+                scraper3.scrape(uri, :parser=>:html_parser).each_with_index do |product3,i|
                 
-                  @act3 = product3
-                  # puts "act: #{@act3}" 
-  
+                    @act3 = repack(product3)
+                    @myAct = Act.find_by_name(@act3)
                   
-  
-                  #new_acts = [] 
-                  #if existing = Act.find_by_name(@act3) 
-                  #  new_acts << existing
-                  #else 
-                  #  new_acts << @act3
-                  #end
+                    if @myAct                  
+                      @justCreatedFestival.acts << @myAct
+                    else 
+                      @justCreatedFestival.acts.create( {:name => @act3 })
+                    end
                   
-                  # org
-                  #@justCreatedFestival.acts.create( {:name => @act3 })
-                  
-                  @myAct = Act.find_by_name(@act3)
-                  
-                  if @myAct                  
-                    @justCreatedFestival.acts << @myAct
-                  else 
-                    @justCreatedFestival.acts.create( {:name => @act3 })
-                  end
-                  
-                  
-              end
+                end
             end
             
         end
@@ -162,6 +152,7 @@ class Festival < ActiveRecord::Base
   end
      
      private
+
 
         def dblcheck_file_name
           # Always generate a new filename

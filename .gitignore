@@ -1,5 +1,12 @@
 .bundle
 db/*.sqlite3
+config/database.yml
 log/*.log
 tmp/
+public/images/items/*
+public/assets/*
+Gemfile
+Gemfile.lock
 .sass-cache/
+
+

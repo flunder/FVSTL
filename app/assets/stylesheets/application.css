@@ -15,9 +15,13 @@ input,textarea,button{outline:none;resize:none;-webkit-box-sizing:content-box;-m
 a { color: #1c8ef0;  }
 a:hover { color: #55a9f1; }
 a:active { color: #126cba; }
-a#logo { text-shadow: 1px 1px 0px #ccc; color: #ff003c; font-family: "sniglet"; float: left; font-size: 2.6em; top: 13px; }
+a#logo { color: #ff003c; font-family: "bello-caps"; float: left; font-size: 4em; top: 7px; padding-left: 0; left: 2px;}
 a#logo:hover { background: none;  }
 h1 { font: 28px; color: #222; }
+h2 { color: #333333; font-size: 1em; font-weight: bold; margin: 31px 10px 8px 0; text-shadow: 0 0 0 #FFFFFF; }
+h3 { color: #333333; font-size: 1.7em; font-weight: bold; margin: 10px 0 0 0; text-shadow: 0 0 0 #FFFFFF; }
+
+.hidden { display: none; } 
 
 html {
 	overflow-x: hidden;
@@ -30,7 +34,7 @@ html {
 	text-size-adjust: 100%;
 }
 
-body { background-color: #fff; color: #333; font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px;  color: #78787b; }
+body { background-color: #fff; color: #333; font-family: 'ff-meta-web-pro','helvetica',sans-serif; font-size: 13px; line-height: 18px;  color: #78787b; }
 body > header { background: #1e1f23; border-bottom: 1px solid #bbb; }
 #content { position: relative; width: 960px; margin: 0 auto; clear: both; }
 footer { border-top: 1px solid #ddd; width: 960px; padding: 0 15px; margin: 19px auto 0; clear: both; }
@@ -49,7 +53,6 @@ header nav {
 
 header nav a {
 	position: relative;
-	background: url(assets/images/loading-light.gif) -999px -999px no-repeat;
 	line-height: 15px;
 	color: #fff ;
 	text-shadow: 1px 1px 0 #000;
@@ -65,3 +68,11 @@ header nav a {
 header nav a:hover { background: #111; }
 header nav a strong { display: block; letter-spacing: 1px; text-transform: uppercase; }
 header nav a em { display: block; font-style: normal; }
+
+
+#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 12px; font-size: 0.7em; color: #78787B;}
+#content .row:nth-child(5n+5) { margin-right: 0px; }
+#content .row img { border: 1px solid #E5E5E5; border-radius: 3px; padding: 4px; width: 172px; }
+#content .row .festImage { float: left; }
+#content .row .dates {}
+#content .row .place {}

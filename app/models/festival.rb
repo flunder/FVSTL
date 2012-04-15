@@ -24,7 +24,7 @@ class Festival < ActiveRecord::Base
   validates_presence_of :image_remote_url, :if => :image_url_provided?, :message => 'is invalid or inaccessible'  
   
   has_attached_file :photo,
-                    :styles => { :small =>  ["50x50#", :png], :thumb =>  ["200x134#", :png] }, #, :large =>  ["250x230#", :png]
+                    :styles => { :small =>  ["50x50#", :png], :thumb =>  ["172x115!", :png] }, #, :large =>  ["250x230#", :png]
                     :path => ":rails_root/public/images/items/:id/:style/:basename.:extension",
                     :url  => "/images/items/:id/:style/:basename.:extension",
                     :default_url => "/images/noimage.png",
@@ -90,8 +90,8 @@ class Festival < ActiveRecord::Base
 
             scraper2.scrape(uri, :parser=>:html_parser).each_with_index do |product2,i2|
                 @title2 = repack(product2.title)
-                @from2 = (product2.fromdate << ' 2012').to_date if @from2
-                @to2 = product2.todate.to_date unless !@to2
+                @from2 = (product2.fromdate << ' 2012').to_date if product2.fromdate
+                @to2 = product2.todate.to_date if product2.todate
                 @website = product2.website         
                 @city = repack(product2.city)
                 @fbUrl = product2.fbUrl      

@@ -1,24 +1,16 @@
-<div>
+<h2>Coming up Festivals &raquo</h2>
+
+<div id="mainWrap">
 	<% @festivals.each do |festival| %>
 		<div class="row">
-			<%= image_tag(festival.photo.url(:thumb)) %>
-			<h2><%= festival.title %></h2>
-			<div><%= link_to festival.website, festival.website %></div>
-			<div><%= festival.desc %></div>
-			<div><%= festival.country %></div>								
-			<div><%= festival.city %></div>					
-			<div><%= festival.from %></div>					
-			<div><%= festival.to %></div>					
-			<div><%= festival.country %></div>
-			<ul class="acts">
-				<% festival.acts.each do |act| %>																		
-					<li><%= link_to act.name, act %></li>
-				<% end %>
-			<ul>	
+			<%= link_to image_tag(festival.photo.url(:thumb)), festival, :class => "festImage" %>
+			<h3><%= festival.title %></h3>
+			<div class="place"><%= festival.country %> / <%= festival.city %></div>												
+			<div class="dates">
+				<time datetime="<%=festival.from%>"><%= festival.from.strftime("%d-%m") %></time>- <%= festival.to.strftime("%d-%m") %>
+			</div>							
 		</div>
 	<% end %>
 </div>
 
-<br />
 
-<%= link_to 'New Festival', new_festival_path %>

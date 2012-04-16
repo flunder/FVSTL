@@ -144,7 +144,7 @@ header nav a em { display: block; font-style: normal; }
 /* ticker */
 .counter { float:right; margin-bottom:15px; position: absolute; right: 17px; top: 35px; color: #333333; font-size: 1em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
 .counter-wrap { height: 11px; overflow:hidden; float:left; position: relative; top: 2px; }
-.counter-wrap .counter-number { height:220px; width:9px; position:relative; background-image:url('../images/counter-new.png'); float:left;}
+.counter-wrap .counter-number { height: 220px; width: 8px; position:relative; background-image:url('../images/counter-new.png'); float:left;}
 .counter-wrap #points { display:none; }
 #counter-label { float: left; margin-right: 5px; }
 

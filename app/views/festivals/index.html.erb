@@ -13,7 +13,9 @@
 	<ul id="countryFilter">
 		<li><a href="" data-filter="">Show All</a></li>
 		<% @countries.each do |country| %>
-			<li><a href="" data-filter=".<%=country.name.downcase %>"><%=country.name %></a></li>
+			<% if country.festivals.size > 0 %>
+				<li><a href="" data-filter=".<%=country.name.downcase %>"><%=country.name %> <i>(<%= country.festivals.size %>)</i></a></li>
+			<% end %>
 		<% end %>
 	</ul>	
 	

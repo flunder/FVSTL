@@ -124,8 +124,9 @@ header nav a em { display: block; font-style: normal; }
 #sidebar { position: relative; width: 145px; float: left; }
 #sidebar ul li { list-style-type: none; }
 #sidebar ul li a { position: relative; }
-#sidebar ul li a.selected { font-weight: bold; }
+#sidebar ul li a.selected { font-weight: bold; font-style: italic; }
 #sidebar ul li a.selected:hover { color: #1C8EF0; }
+#sidebar ul li a i { color: #DDDDDD; font-size: 0.8em; font-style: normal; letter-spacing: 1px; margin-left: 0; position: relative; top: -1px; }
 #sidebar h4.first { margin-top: 0; }
 #sidebar h4 { margin-top: 15px; }
 
@@ -140,6 +141,8 @@ header nav a em { display: block; font-style: normal; }
 	right: 20px;
   top: 8px;
 }
+
+
 
 /* ticker */
 .counter { float:right; margin-bottom:15px; position: absolute; right: 17px; top: 35px; color: #333333; font-size: 1em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }

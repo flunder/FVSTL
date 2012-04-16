@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div id="actsPage">
+	<h2><%= @act.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @act.name %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<% @act.festivals.each do |festival| %>
-	<div><%= link_to festival.title, festival %>
-<% end %>
+	<p>
+	  <b>Name:</b>
+	  <%= @act.name %>
+	</p>
 
-<br/>
+	<% @act.festivals.each do |festival| %>
+		<div><%= link_to festival.title, festival %>
+	<% end %>
 
-<%= link_to 'Edit', edit_act_path(@act) %> |
-<%= link_to 'Back', acts_path %>
+	<br/>
+
+	<%= link_to 'Edit', edit_act_path(@act) %> |
+	<%= link_to 'Back', acts_path %>
+</div>

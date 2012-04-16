@@ -18,8 +18,9 @@ a:active { color: #126cba; }
 a#logo { color: #ff003c; font-family: "bello-caps"; float: left; font-size: 4em; top: 7px; padding-left: 0; left: 2px;}
 a#logo:hover { background: none;  }
 h1 { font: 28px; color: #222; }
-h2 { color: #333333; font-size: 1em; font-weight: bold; margin: 31px 10px 8px 0; text-shadow: 0 0 0 #FFFFFF; }
-h3 { color: #333333; font-size: 1.7em; font-weight: bold; margin: 10px 0 0 0; text-shadow: 0 0 0 #FFFFFF; }
+h2 { clear: both; color: #333333; float: left; font-size: 1.5em; font-weight: bold; margin: 35px 10px 17px 0; text-shadow: 0 0 0 #FFFFFF; width: 100%; }
+h3 { color: #333333; font-size: 1.7em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
+h4 { color: #333333; font-size: 1em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
 
 .hidden { display: none; } 
 
@@ -35,7 +36,8 @@ html {
 }
 
 body { background-color: #fff; color: #333; font-family: 'ff-meta-web-pro','helvetica',sans-serif; font-size: 13px; line-height: 18px;  color: #78787b; }
-body > header { background: #1e1f23; border-bottom: 1px solid #bbb; }
+body header { background: #1e1f23; background: #1E1F23; }
+body #subhead { background: #1e1f23; background: #ddd; border-bottom: 1px solid #BBBBBB; }
 #content { position: relative; width: 960px; margin: 0 auto; clear: both; }
 footer { border-top: 1px solid #ddd; width: 960px; padding: 0 15px; margin: 19px auto 0; clear: both; }
 
@@ -65,14 +67,122 @@ header nav a {
 	tap-highlight-color: transparent;
 }
 
+#subhead nav {
+	text-align: right;
+	width: 970px;
+	height: 35px;
+	margin: 0 auto;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	user-select: none;
+}
+
+#subhead nav li {
+	background:  GhostWhite;
+	color: #1C8EF0;
+	float: left;
+	font-size: 1em;
+	height: 9px;
+	line-height: 15px;
+	padding: 13px 15px;
+	position: relative;
+	text-align: right;
+	text-shadow: 1px 1px 0 #fff;
+	display: block;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+#subhead nav li a {
+
+}
+
+#subhead nav a.current { border-bottom: 1px solid #ff003c; }
+
 header nav a:hover { background: #111; }
 header nav a strong { display: block; letter-spacing: 1px; text-transform: uppercase; }
 header nav a em { display: block; font-style: normal; }
 
-
-#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 12px; font-size: 0.7em; color: #78787B;}
-#content .row:nth-child(5n+5) { margin-right: 0px; }
-#content .row img { border: 1px solid #E5E5E5; border-radius: 3px; padding: 4px; width: 172px; }
+#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 16px; font-size: 0.7em; color: #78787B; line-height: 16px; }
+/* #content .row:nth-child(5n+5) { margin-right: 0px; } */
+#content #mainWrap { width: 990px; } 
+#content h3 { float: left; clear: both;  margin: 0 0 0 5px; } 
+#content .row img { border-radius: 3px; width: 172px; }
+#content .row img:hover { opacity: 0.75;}
 #content .row .festImage { float: left; }
-#content .row .dates {}
-#content .row .place {}
+#content .row time { float: left; clear: both; margin-left: 5px; }
+#content .row .place { float: left; clear: both; margin-left: 5px; }
+
+
+
+#content #actsPage .col { float: left;  width: 17%; margin-right: 28px; }
+#content #actsPage .header { margin-top: 20px;  border-bottom: 1px solid #ddd; font-size: 1.2em; margin-bottom: 10px; }
+#content ul.acts {  }
+#content ul.acts li { list-style-type: none; }
+
+#mainWrap.festivalIndex { float: right; width: 795px !important; }
+
+#sidebar { position: relative; width: 145px; float: left; }
+#sidebar ul li { list-style-type: none; }
+#sidebar ul li a { position: relative; }
+#sidebar ul li a.selected { font-weight: bold; }
+#sidebar ul li a.selected:hover { color: #1C8EF0; }
+#sidebar h4.first { margin-top: 0; }
+#sidebar h4 { margin-top: 15px; }
+
+#search {
+  background: url("http://www.bikeshd.co.uk/images/search_field.gif") no-repeat scroll 0 -22px transparent;
+  border: medium none;
+  font-size: 12px;
+  height: 18px;
+  padding: 2px 10px 2px 21px;
+  width: 149px;
+	position: relative;
+	right: 20px;
+  top: 8px;
+}
+
+/* ticker */
+.counter { float:right; margin-bottom:15px; position: absolute; right: 17px; top: 35px; color: #333333; font-size: 1em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
+.counter-wrap { height: 11px; overflow:hidden; float:left; position: relative; top: 2px; }
+.counter-wrap .counter-number { height:220px; width:9px; position:relative; background-image:url('../images/counter-new.png'); float:left;}
+.counter-wrap #points { display:none; }
+#counter-label { float: left; margin-right: 5px; }
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+

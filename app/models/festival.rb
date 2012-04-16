@@ -13,6 +13,7 @@ require 'xml'
 class Festival < ActiveRecord::Base
   
   has_and_belongs_to_many :acts
+  has_and_belongs_to_many :countries
   has_many :prices
   
   # PAPERCLIP ------------------------------------------
@@ -32,8 +33,13 @@ class Festival < ActiveRecord::Base
   # // PAPERCLIP ----------------------------------------
   
   def self.repack(string)
+    string = string.strip
     return string.unpack('U*').pack('U*')
   end
+   
+  def country
+    return festival.countries.first
+  end   
    
   def self.import_from_festivalsearcher
     
@@ -117,7 +123,6 @@ class Festival < ActiveRecord::Base
                     :title        => @title2,
                     :website      => @website,
                     :desc         => '',
-                    :country      => @country,
                     :city         => @city,                 
                     :from         => @from2,                     
                     :to           => @to2,  
@@ -127,7 +132,18 @@ class Festival < ActiveRecord::Base
 
                 @justCreatedFestival = Festival.find_by_title(@title2)
               
+                # Countries 
+                @myCountry = Country.find_by_name(@country)
+            
+                if @myCountry                  
+                  @justCreatedFestival.countries << @myCountry
+                else 
+                  @justCreatedFestival.countries.create( {:name => @country })
+                end
+              
             end
+            
+            #Acts
             
             if scraper3.scrape(uri, :parser=>:html_parser)
                 scraper3.scrape(uri, :parser=>:html_parser).each_with_index do |product3,i|

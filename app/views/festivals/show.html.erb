@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div id="festivalPage">
+	<h2><%= @festival.title %></h2>
 
-<p>
-  <b>title:</b>
-  <%= @festival.title %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>website:</b>
-  <%= @festival.website %>
-</p>
+	<p>
+	  <b>website:</b>
+	  <%= @festival.website %>
+	</p>
 
 
-<p>
-  <b>desc:</b>
-  <%= @festival.desc %>
-</p>
+	<p>
+	  <b>desc:</b>
+	  <%= @festival.desc %>
+	</p>
 
-<p>
-  <b>country:</b>
-  <%= @festival.country %>
-</p>
+	<p>
+	  <b>country:</b>
+	  <%= link_to @festival.countries.first.name, @festival.countries.first %>
+	</p>
 
-<% @festival.acts.each do |act| %>
-	<%=link_to act.name, act %>
-<% end%>
+	<% @acts.each do |act| %>
+		<%=link_to act.name, act %>
+	<% end%>
 
-<%= link_to 'Edit', edit_festival_path(@festival) %> |
-<%= link_to 'Back', festivals_path %>
+	<%= link_to 'Edit', edit_festival_path(@festival) %> |
+	<%= link_to 'Back', festivals_path %>
+</div>

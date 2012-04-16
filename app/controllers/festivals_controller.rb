@@ -1,8 +1,13 @@
 class FestivalsController < ApplicationController
 
   def index
-    @festivals = Festival.all
-
+    @festivals = Festival.all.sort { |a,b| a.title <=> b.title }
+    @countries = Country.all
+    
+    s_date = DateTime.now
+    e_date = Date.new(2012, 12, 31)
+    @months = (s_date.month..e_date.month).to_a
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @festivals }
@@ -11,7 +16,8 @@ class FestivalsController < ApplicationController
 
   def show
     @festival = Festival.find(params[:id])
-
+    @acts = @festival.acts.sort { |a,b| a.name <=> b.name }
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @festival }

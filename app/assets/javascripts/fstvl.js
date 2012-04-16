@@ -12,9 +12,60 @@
 
 	// functions
 	$(document).ready(function(){
-			$('#mainWrap').isotope({
-		   	itemSelector: '.row',
-				layoutMode : 'fitRows'
-			
+		
+			var showing;
+   		var $container = $('#mainWrap');
+
+			initializeTicker($('#mainWrap div.row').size());
+		
+			$container.isotope({
+		   		itemSelector: '.row',
+					layoutMode : 'fitRows'
 		  });
-	})
+
+			// filter items when filter link is clicked
+			$('#sidebar a').click(function(){
+				
+				  var selector = $(this).attr('data-filter');
+				  $container.isotope({ filter: selector });
+				
+					if ( $(this).hasClass('selected') ) {
+          		return false;
+        	} else {
+							$(this).parents('section').find('.selected').animate({ left: '-=10' }, 500, function() { }).removeClass('selected');
+							$(this).animate({ left: '+=10' }, 500, function() { }).addClass('selected');
+							
+							showing = $('#mainWrap.festivalIndex div.isotope-item:not(.isotope-hidden)').size();
+							loadticker(showing);
+							
+							return false;
+					}
+			});
+	
+			/*
+			$(document).ready(function(){
+					$('#actsPage').isotope({
+				   	itemSelector: '.acts',
+						layoutMode : 'masonry'
+			
+				  });
+			})
+				*/
+	
+			$('.smartInput').keypress(function(e){
+				if(e.which == 13){
+					$('form').submit();
+				}
+			});
+	
+			$(".smartInput").focus(function() {
+				if( this.value == this.defaultValue ) {
+					this.value = "";
+				}
+			}).blur(function() {
+				if( !this.value.length ) {
+					this.value = this.defaultValue;
+				}
+			});
+	
+		})

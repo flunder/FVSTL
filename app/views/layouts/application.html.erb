@@ -8,7 +8,7 @@
 	
   	<title>Fstvl</title>
 
-  	<%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag "application" %>
   	<%= javascript_include_tag "application" %>
   	<%= csrf_meta_tags %>
 	<script type="text/javascript" src="http://use.typekit.com/ffl5rel.js"></script>
@@ -19,12 +19,22 @@
 <body>
 
 	<header>
-		<nav>
+		<nav id="main">
 			<a href="/" id="logo">FSTVL</a>
 			<a href="/x" ><strong>Contact</strong><em>let's work together</em></a>
 			<a href="/y"><strong>Contact</strong><em>let's work together</em></a>		
 		</nav>
 	</header>
+	
+	<div id="subhead">
+		<nav>
+			<ul>
+				<li><%= link_to "Festivals", festivals_url %></li>
+				<li><%= link_to "Acts", acts_url %></li>
+			</ul>
+			<input type="text" size="30" name="search[blurb_like]" id="search" class="smartInput">		
+		</nav>		
+	</div>
 
 	<section id="content">
 		<%= yield %>

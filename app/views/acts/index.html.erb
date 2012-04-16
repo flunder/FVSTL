@@ -1,23 +1,19 @@
-<h1>Listing acts</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @acts.each do |act| %>
-  <tr>
-    <td><%= act.name %></td>
-    <td><%= link_to 'Show', act %></td>
-    <td><%= link_to 'Edit', edit_act_path(act) %></td>
-    <td><%= link_to 'Destroy', act, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Act', new_act_path %>
+<div id="actsPage">
+	<h2>Acts</h2>
+	
+	<div class="col">
+	<% @groupedActs.each_with_index do |group,i| %>
+	
+			<ul class="acts">
+				<li class="header"><%= group[0] %></li>
+				<% group[1].each_with_index do |t,i| %>
+					<li><%= link_to t.name, t %></li>		
+				<% end %>
+			</ul>	
+		<% if i%5 == 2; %>
+			</div><div class="col">
+		<% end %>	
+			
+	<% end %>
+	</div>	
+</div>

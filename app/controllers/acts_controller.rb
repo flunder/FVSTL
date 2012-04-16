@@ -1,7 +1,8 @@
 class ActsController < ApplicationController
 
   def index
-    @acts = Act.all
+    @acts = Act.all.sort { |a,b| a.name <=> b.name }
+    @groupedActs = @acts.group_by { |i| i.name[0..0] }
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,5 +1,7 @@
 Fstvl::Application.routes.draw do
   
+  resources :countries
+
   resources :acts
   resources :prices
   resources :festivals

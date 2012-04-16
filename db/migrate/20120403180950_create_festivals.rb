@@ -4,7 +4,6 @@ class CreateFestivals < ActiveRecord::Migration
       t.string     :title      
       t.string     :website
       t.text       :desc
-      t.string     :country
       t.string     :city
       t.date       :from
       t.date       :to      

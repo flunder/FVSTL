@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403233020) do
+ActiveRecord::Schema.define(:version => 20120415211910) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -24,11 +24,21 @@ ActiveRecord::Schema.define(:version => 20120403233020) do
     t.integer "act_id"
   end
 
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries_festivals", :id => false, :force => true do |t|
+    t.integer "festival_id"
+    t.integer "country_id"
+  end
+
   create_table "festivals", :force => true do |t|
     t.string   "title"
     t.string   "website"
     t.text     "desc"
-    t.string   "country"
     t.string   "city"
     t.date     "from"
     t.date     "to"

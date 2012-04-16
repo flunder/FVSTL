@@ -1,16 +1,39 @@
-<h2>Coming up Festivals &raquo</h2>
+<h2>Festivals coming up &raquo</h2>
 
-<div id="mainWrap">
+<menu class="counter">
+	<div id="counter-label">Showing:</div>
+	<div class="counter-wrap">
+		<div id="points" class="counter-number"><%=@festivals.size %></div>
+	</div>
+</menu>
+
+<section id="sidebar">
+	
+	<h4 class="first">Filter by country</h4>
+	<ul id="countryFilter">
+		<li><a href="" data-filter="">Show All</a></li>
+		<% @countries.each do |country| %>
+			<li><a href="" data-filter=".<%=country.name.downcase %>"><%=country.name %></a></li>
+		<% end %>
+	</ul>	
+	
+	<h4>Filter by month</h4>
+	<ul id="monthFilter">
+		<li><a href="" data-filter="">Show All</a></li>
+		<% @months.each do |month| %>
+			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%></a></li>
+		<% end %>
+	</ul>
+			
+</section>
+
+<section id="mainWrap" class="festivalIndex">
 	<% @festivals.each do |festival| %>
-		<div class="row">
+		<div class="row <%=festival.countries.first.name.downcase %> <%=festival.from.strftime("%B").downcase %>">
 			<%= link_to image_tag(festival.photo.url(:thumb)), festival, :class => "festImage" %>
-			<h3><%= festival.title %></h3>
-			<div class="place"><%= festival.country %> / <%= festival.city %></div>												
-			<div class="dates">
-				<time datetime="<%=festival.from%>"><%= festival.from.strftime("%d-%m") %></time>- <%= festival.to.strftime("%d-%m") %>
-			</div>							
+			<div class="place"><%= festival.countries.first.name %> / <%= festival.city %></div>	
+			<h3><%= festival.title %></h3>						
+			<time datetime="<%=festival.from%>"><%= festival.from.strftime("%d.%B.%Y") %></time>
 		</div>
 	<% end %>
-</div>
-
-
+</section>

@@ -1,0 +1,84 @@
+$debug: false;
+
+#content .row { min-height: 200px; }
+
+/* 1190 IMAC */
+@media only screen and (min-width: 1190px) {
+	
+	header nav,
+	#subhead nav,
+	#content { width: 1190px; }
+	
+	#mainWrap.festivalIndex { float: right; width: 990px; }
+
+	@if $debug {
+			body::before{
+	    		content: ">1190px";
+					font-weight:bold;display:block;text-align:center;background:rgba(255,255,0,0.9); position:absolute;top:0;left:0;right:0;z-index:99;
+	  	}
+	}
+}
+
+/* >980 */
+@media only screen and (min-width: 980px) and (max-width: 1189px) {
+	
+	header nav,
+	#subhead nav,
+	#content { width: 960px !important; }
+	
+	#mainWrap.festivalIndex { float: right; width: 795px !important; }
+
+	@if $debug {
+			body::before{
+	    		content: "980px->1189px";
+					font-weight:bold;display:block;text-align:center;background:rgba(255,255,0,0.9); position:absolute;top:0;left:0;right:0;z-index:99;
+	  	}
+	}
+	
+}
+
+/* TABLET */
+@media only screen and (min-width: 740px) and (max-width: 979px) {
+	
+	header nav,
+	#subhead nav,
+	#content { width: 740px !important; }
+	
+	#mainWrap.festivalIndex { float: right; width: 595px !important; }
+	
+	@if $debug {
+			body::before{
+	    		content: "740px -> 979px";
+					font-weight:bold;display:block;text-align:center;background:rgba(255,255,0,0.9); position:absolute;top:0;left:0;right:0;z-index:99;
+	  	}
+	}
+
+}
+
+/* <739 */
+@media only screen and (max-width: 739px) {
+	
+	header nav,
+	#subhead nav,
+	#content { width: 500px !important; }
+	#sidebar { width: 100px !important; }
+	#mainWrap.festivalIndex { float: right; width: 360px !important; }
+	
+	.row { width: 100px !important;  margin-right: 20px !important; }
+	.row img { width: 100px !important; }
+	#content .row .place,
+	#content h3,
+	#content .row time { margin-left: 0px !important; line-height: 1.3em; }
+
+	#content h3 { font-size: 1.2em; }
+		
+	#content .row { min-height: 130px; }
+	
+	@if $debug {
+			body::before{
+	    		content: "<739px";
+					font-weight:bold;display:block;text-align:center;background:rgba(255,255,0,0.9); position:absolute;top:0;left:0;right:0;z-index:99;
+	  	}
+	}		
+	
+}

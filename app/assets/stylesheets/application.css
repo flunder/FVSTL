@@ -107,7 +107,7 @@ header nav a em { display: block; font-style: normal; }
 #content #mainWrap { width: 990px; } 
 #content h3 { float: left; clear: both;  margin: 0 0 0 5px; } 
 #content .row img { border-radius: 3px; width: 172px; }
-#content .row img:hover { opacity: 0.75;}
+#content .row img:hover {  }
 #content .row .festImage { float: left; }
 #content .row time { float: left; clear: both; margin-left: 5px; }
 #content .row .place { float: left; clear: both; margin-left: 5px; }
@@ -178,7 +178,6 @@ header nav a em { display: block; font-style: normal; }
 }
 
 /**** disabling Isotope CSS3 transitions ****/
-
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {

@@ -67,5 +67,12 @@
 					this.value = this.defaultValue;
 				}
 			});
+			
+			$('.festImage').hover( function () {
+					$(this).stop().animate({opacity : 0.8}, 300);
+			}, function () {
+					$(this).stop().animate({opacity : 1}, 300); 
+			});
+			
 	
 		})

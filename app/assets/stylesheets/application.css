@@ -18,7 +18,7 @@ a:active { color: #126cba; }
 a#logo { color: #ff003c; font-family: "bello-caps"; float: left; font-size: 4em; top: 7px; padding-left: 0; left: 2px;}
 a#logo:hover { background: none;  }
 h1 { font: 28px; color: #222; }
-h2 { clear: both; color: #333333; float: left; font-size: 1.5em; font-weight: bold; margin: 35px 10px 17px 0; text-shadow: 0 0 0 #FFFFFF; width: 100%; }
+h2 { font-size: 2.8em; font-family: "bello-caps"; clear: both; color: #333333; float: left; font-weight: normal; margin: 35px 10px 20px 0; text-shadow: 0 0 0 #FFFFFF; width: 100%; }
 h3 { color: #333333; font-size: 1.7em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
 h4 { color: #333333; font-size: 1em; font-weight: bold; text-shadow: 0 0 0 #FFFFFF; }
 
@@ -129,6 +129,8 @@ header nav a em { display: block; font-style: normal; }
 #sidebar ul li a i { color: #DDDDDD; font-size: 0.8em; font-style: normal; letter-spacing: 1px; margin-left: 0; position: relative; top: -1px; }
 #sidebar h4.first { margin-top: 0; }
 #sidebar h4 { margin-top: 15px; }
+
+#sidebar #showAll { margin-bottom: 15px; width: 100%; float: left; font-family: "bello-caps"; font-size: 2em; }
 
 #search {
   background: url("http://www.bikeshd.co.uk/images/search_field.gif") no-repeat scroll 0 -22px transparent;

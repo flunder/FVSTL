@@ -9,9 +9,10 @@
 
 <section id="sidebar">
 	
+	<a href="" data-filter="" id="showAll">Show All</a>
+	
 	<h4 class="first">Filter by country</h4>
 	<ul id="countryFilter">
-		<li><a href="" data-filter="">Show All</a></li>
 		<% @countries.each do |country| %>
 			<% if country.festivals.size > 0 %>
 				<li><a href="" data-filter=".<%=country.name.downcase %>"><%=country.name %> <i>(<%= country.festivals.size %>)</i></a></li>
@@ -21,7 +22,6 @@
 	
 	<h4>Filter by month</h4>
 	<ul id="monthFilter">
-		<li><a href="" data-filter="">Show All</a></li>
 		<% @months.each do |month| %>
 			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%></a></li>
 		<% end %>

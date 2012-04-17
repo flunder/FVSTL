@@ -102,7 +102,7 @@ header nav a:hover { background: #111; }
 header nav a strong { display: block; letter-spacing: 1px; text-transform: uppercase; }
 header nav a em { display: block; font-style: normal; }
 
-#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 16px; font-size: 0.7em; color: #78787B; line-height: 16px; }
+#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 10px; font-size: 0.7em; color: #78787B; line-height: 16px; }
 /* #content .row:nth-child(5n+5) { margin-right: 0px; } */
 #content #mainWrap { width: 990px; } 
 #content h3 { float: left; clear: both;  margin: 0 0 0 5px; } 
@@ -119,9 +119,9 @@ header nav a em { display: block; font-style: normal; }
 #content ul.acts {  }
 #content ul.acts li { list-style-type: none; }
 
-#mainWrap.festivalIndex { float: right; width: 795px; }
+#mainWrap.festivalIndex { float: right; width: 795px; margin-bottom: 10px; }
 
-#sidebar { position: relative; width: 145px; float: left; }
+#sidebar { position: relative; width: 145px; float: left; margin-bottom: 20px; }
 #sidebar ul li { list-style-type: none; }
 #sidebar ul li a { position: relative; }
 #sidebar ul li a.selected { font-weight: bold; font-style: italic; }

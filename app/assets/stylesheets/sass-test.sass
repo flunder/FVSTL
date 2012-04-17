@@ -1,11 +1,53 @@
-$blue: #3bbfce
-$margin: 16px
+$width: 960px
 
-.content-navigation
-  border-color: $blue
-  color: darken($blue, 9%)
+=rounded-corners
+	-moz-border-radius: 5px
+	-webkit-border-radius: 5px
+	border-radius: 5px
 
-.border
-  padding: $margin / 2
-  margin: $margin / 2
-  border-color: $blue
+@mixin gradient($first, $second) 
+	background: $second
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second')
+	background: -webkit-gradient(linear, left top, left bottom, from($first), to($second))
+	background: -moz-linear-gradient(top,  $first,  $second)
+
+// Promos
+#topPromo 
+	+rounded-corners
+	width: $width
+	height: 200px
+	background: #ddd
+	margin: 20px auto -15px auto
+	@include gradient(#eee, #ccc)
+	
+#bottomPromo
+	width: $width
+	margin: 20px auto 15px auto
+	clear: both
+	
+#bottomPromo .miniPromo
+	+rounded-corners
+	width: ($width / 4) - 10
+	height: 100px
+	background: #00b4e3
+	display: inline-block
+	margin-right: 10px
+	@include gradient(#00b4e3, #5cd4f2)
+
+#bottomPromo .miniPromo:nth-child(4)
+	margin-right: 0px
+	
+@media screen and (min-width: 740px) and (max-width: 979px) 
+	$width: 740px
+	#topPromo, #bottomPromo 
+		width: $width
+	#bottomPromo .miniPromo
+		width: ($width / 4) - 10
+		
+@media screen and (max-width: 739px) 
+	$width: 500px
+	#topPromo, #bottomPromo 
+		width: $width	
+	#bottomPromo .miniPromo
+		width: ($width / 4) - 10		
+			

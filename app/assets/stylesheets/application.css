@@ -39,7 +39,7 @@ body { background-color: #fff; color: #333; font-family: 'ff-meta-web-pro','helv
 body header { background: #1e1f23; background: #1E1F23; }
 body #subhead { background: #1e1f23; background: #ddd; border-bottom: 1px solid #BBBBBB; }
 #content { position: relative; width: 960px; margin: 0 auto; clear: both; }
-footer { border-top: 1px solid #ddd; width: 960px; padding: 0 15px; margin: 19px auto 0; clear: both; }
+footer { border-top: 1px solid #ddd; width: 960px; padding: 0 15px; margin: 19px auto 20px; clear: both; }
 
 /* @group navigation */
 
@@ -111,7 +111,6 @@ header nav a em { display: block; font-style: normal; }
 #content .row .festImage { float: left; }
 #content .row time { float: left; clear: both; margin-left: 5px; }
 #content .row .place { float: left; clear: both; margin-left: 5px; }
-
 
 
 #content #actsPage .col { float: left;  width: 17%; margin-right: 28px; }

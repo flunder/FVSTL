@@ -102,7 +102,7 @@ header nav a:hover { background: #111; }
 header nav a strong { display: block; letter-spacing: 1px; text-transform: uppercase; }
 header nav a em { display: block; font-style: normal; }
 
-#content .row { float: left; margin-right: 30px; width: 168px; margin-bottom: 10px; font-size: 0.7em; color: #78787B; line-height: 16px; }
+#content .row { float: left; margin-right: 30px; width: 168px; min-height: 175px; margin-bottom: 10px; font-size: 0.7em; color: #78787B; line-height: 16px; }
 /* #content .row:nth-child(5n+5) { margin-right: 0px; } */
 #content #mainWrap { width: 990px; } 
 #content h3 { float: left; clear: both;  margin: 0 0 0 5px; } 
@@ -111,7 +111,6 @@ header nav a em { display: block; font-style: normal; }
 #content .row .festImage { float: left; }
 #content .row time { float: left; clear: both; margin-left: 5px; }
 #content .row .place { float: left; clear: both; margin-left: 5px; }
-
 
 #content #actsPage .col { float: left;  width: 17%; margin-right: 28px; }
 #content #actsPage .header { margin-top: 20px;  border-bottom: 1px solid #ddd; font-size: 1.2em; margin-bottom: 10px; }

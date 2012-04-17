@@ -24,7 +24,7 @@
 	<ul id="monthFilter">
 		<% @months.each do |month| %>
 			<% @festivalsThisMonth = Bucket.where(:content => 'monthCount', :name => month) %>
-			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%> <i>(<%= @festivalsThisMonth.first.number %>)</i></a></li>
+			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%> <i>(<%= @festivalsThisMonth.first.number if @festivalsThisMonth.first %>)</i></a></li>
 		<% end %>
 	</ul>
 						

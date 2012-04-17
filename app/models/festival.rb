@@ -85,7 +85,9 @@ class Festival < ActiveRecord::Base
 
       scraper.scrape(uri, :parser=>:html_parser).each_with_index do |product,i|
         
-        if product.link
+        @exists = Festival.exists?(:url => product.link)
+        
+        if product.link && !@exists
                   
             @title = repack(product.title)
             @href = 'http://www.festivalsearcher.com/' << product.link
@@ -105,6 +107,7 @@ class Festival < ActiveRecord::Base
                 @estab = product2.estab   
                 @image = 'http://www.festivalsearcher.com/' << product2.imageSrc 
                 @capacity = product2.capacity.delete(',').to_i if @capacity
+                @url = product.link
               
                 # price
                 
@@ -118,6 +121,7 @@ class Festival < ActiveRecord::Base
                 puts "estab: #{@estab}"          
                 puts "image: #{@image}" 
                 puts "capacity: #{@capacity}" 
+                puts "url: #{@url}"
                 puts    
           
                 create!(
@@ -128,7 +132,8 @@ class Festival < ActiveRecord::Base
                     :from         => @from2,                     
                     :to           => @to2,  
                     :imageSrc     => @image,
-                    :image_url    => @image,                                    
+                    :image_url    => @image,  
+                    :url          => @url                                  
                 )
 
                 @justCreatedFestival = Festival.find_by_title(@title2)
@@ -161,6 +166,8 @@ class Festival < ActiveRecord::Base
                 end
             end
             
+        else 
+          puts "existed"
         end
         
     end    

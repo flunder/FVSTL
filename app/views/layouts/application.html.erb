@@ -35,11 +35,13 @@
 			<input type="text" size="30" name="search[blurb_like]" id="search" class="smartInput">		
 		</nav>		
 	</div>
-
+	
+	<% if controller.controller_name == 'festivals' && controller.action_name == 'index' %>
 	<div id="topPromo">
 		<div class="col1"></div>
 		<div class="col2"></div>	
 	</div>
+	<% end %>
 
 	<section id="content">
 		<%= yield %>
@@ -71,7 +73,7 @@
 	
 	<footer>
 		<article role="about">
-			<small>&copy; 2012 <a href="/">LA</a></small>
+			<small>&copy; 2012 <a href="http://www.larsattacks.co.uk">LA</a></small>
 		</article>
 	</footer>
 	

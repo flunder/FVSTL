@@ -23,17 +23,11 @@
 	<h4>Filter by month</h4>
 	<ul id="monthFilter">
 		<% @months.each do |month| %>
-			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%></a></li>
+			<% @festivalsThisMonth = Bucket.where(:content => 'monthCount', :name => month) %>
+			<li><a href="" data-filter=".<%=Date::MONTHNAMES[month].downcase %>"><%=Date::MONTHNAMES[month]%> <i>(<%= @festivalsThisMonth.first.number %>)</i></a></li>
 		<% end %>
 	</ul>
-			
-	<!--
-	<div id="leftAd">
-		<br/s>		
-		<img src="https://www.google.com/help/hc/images/adsense_185666_adformat-display_200x200_en.jpg">
-	</div>
-	-->
-			
+						
 </section>
 
 <section id="mainWrap" class="festivalIndex">

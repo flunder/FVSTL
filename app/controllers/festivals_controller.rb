@@ -1,7 +1,7 @@
 class FestivalsController < ApplicationController
 
   def index
-    @festivals = Festival.all.sort { |a,b| a.title <=> b.title }
+    @festivals = Festival.all.sort { |a,b| a.from. <=> b.from }
     @countries = Country.all
     
     s_date = DateTime.now
@@ -80,4 +80,9 @@ class FestivalsController < ApplicationController
     render :nothing => true
   end  
   
+  
+  def monthsums
+    Festival.calculate_monthsums
+    render :nothing => true
+  end
 end

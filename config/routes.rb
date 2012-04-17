@@ -9,5 +9,6 @@ Fstvl::Application.routes.draw do
   root :to => 'festivals#index'
 
   match '/import' => "festivals#import"  
+  match '/monthsums' => "festivals#monthsums"    
 
 end

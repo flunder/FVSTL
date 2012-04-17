@@ -9,6 +9,7 @@ require 'iconv'
 require 'csv'
 require 'cgi'
 require 'xml'
+require 'date'
 
 class Festival < ActiveRecord::Base
   
@@ -166,6 +167,38 @@ class Festival < ActiveRecord::Base
 
 
   end
+  
+  # Function that calculates the amount of festivals
+  # per month and stores it in the bucket
+  
+  def self.calculate_monthsums
+    
+    # Lets say we take it from now until the end of the year
+    s_date = DateTime.now
+    e_date = Date.new(2012, 12, 31)
+    @months = (s_date.month..e_date.month).to_a
+    
+    @months.each do |month|
+      
+      # We need to calculate the first and last day of each month
+      @firstDayInMonth = "2012-#{month}-01".to_date
+      @lastDayinMonth = Date.civil(2012, month, -1)
+      @festivalsInMonth = Festival.where(:from => @firstDayInMonth.. @lastDayinMonth)
+      
+      puts @festivalsInMonth.size
+      
+      # Insert or update 
+      @myItem = Bucket.find_by_name(month)  # Insert or create Bucket fields
+      if (@myItem) 
+          Bucket.update( @myItem.id, :number => @festivalsInMonth.size, :content => 'monthCount' )  
+      else
+          Bucket.create!( :name => month, :number => @festivalsInMonth.size, :content => 'monthCount')       
+      end      
+
+    end
+    
+  end
+    
      
      private
 

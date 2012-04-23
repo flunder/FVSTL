@@ -37,10 +37,7 @@
 	</div>
 	
 	<% if controller.controller_name == 'festivals' && controller.action_name == 'index' %>
-	<div id="topPromo">
-		<div class="col1"></div>
-		<div class="col2"></div>	
-	</div>
+		<%= render 'layouts/toppromo' %>
 	<% end %>
 
 	<section id="content">
@@ -49,25 +46,19 @@
 	
 	<!--
 	<div id="bottomPromo">
-		<div class="miniPromo"></div>
-		<div class="miniPromo"></div>
-		<div class="miniPromo"></div>
-		<div class="miniPromo"></div>
+		<div class="miniPromo"></div><div class="miniPromo"></div><div class="miniPromo"></div><div class="miniPromo"></div>
 	</div>
 	-->
+	
 	<div id="bottomAdContainer">
 		<div id="bottomAd">
 			<script type="text/javascript"><!--
 			google_ad_client = "ca-pub-6918447094199276";
 			/* Fstvl */
-			google_ad_slot = "5419633632";
-			google_ad_width = 728;
-			google_ad_height = 90;
+			google_ad_slot = "5419633632"; google_ad_width = 728; google_ad_height = 90;
 			//-->
 			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
+			<script type="text/javascript"src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 		</div>
 	</div>
 	

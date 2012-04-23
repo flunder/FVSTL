@@ -1,0 +1,121 @@
+@mixin animationCallPrefix($value) {
+		-webkit-animation: #{$value};
+		-moz-animation: #{$value};
+		-o-animation: #{$value};		
+		-ms-animation: #{$value};				
+		animation: #{$value};						
+}
+
+#topPromo { position: relative; overflow: hidden; }
+#topPromo ul li { list-style-type: none; }
+
+#topPromo #clouds { position: absolute; top: 0px; z-index: 0; }
+
+#topPromo #cloud-group-1 { 
+		width:960px; position: absolute; left: 0px;
+		@include animationCallPrefix('cloud-group-1-animation 30s infinite linear');
+}
+#topPromo #cloud-group-2 {
+    width: 960px; position: absolute; left: 960px;
+		@include animationCallPrefix('cloud-group-2-animation 30s infinite linear');		
+}
+#topPromo #cloud-group-3 {
+    width: 960px; position: absolute; left: 960px;
+		@include animationCallPrefix('cloud-group-3-animation 59s infinite linear');
+}
+
+#topPromo .cloud-1 {
+    width: 172px;
+    height: 121px;
+    background-image: url(../images/ad/cloud-1.png);
+    position: absolute;
+    top: 10px;
+    left: 40px;
+		@include animationCallPrefix('cloud-1-animation 15s infinite ease-in-out');
+		@include animationCallPrefix('cloud-1-roNanimation 2s infinite ease-in-out');		
+}
+#topPromo .cloud-2 {
+    width: 121px;
+    height: 75px;
+    background-image: url(../images/ad/cloud-2.png);
+    position: absolute;
+    top: -25px;
+    left: 300px;
+		@include animationCallPrefix('cloud-2-animation 30s infinite ease-in-out');
+		@include animationCallPrefix('cloud-2-roNanimation 2s infinite ease-in-out');		
+}
+#topPromo .cloud-3 {
+    width: 132px;
+    height: 105px;
+    background-image: url(../images/ad/cloud-3.png);
+    position: absolute;
+    top: -5px;
+    left: 530px;
+		@include animationCallPrefix('cloud-3-roNanimation 2s infinite ease-in-out');		 
+}
+#topPromo .cloud-4 {
+    width: 102px;
+    height: 141px;
+    background-image: url(../images/ad/rabbit.png);
+    position: absolute;
+    top: 5px;
+    left: 832px;
+		@include animationCallPrefix('cloud-4-roNanimation 3s infinite ease-in-out');		 
+}
+
+
+/* FireFox Animations */
+
+@-moz-keyframes cloud-group-1-animation {
+	0%        { left: 0px; }
+	99.9999%  { left: -960px; }
+	100%      { left: 0px; }
+}
+@-moz-keyframes cloud-group-2-animation {
+	0%        { left: 960px; }
+	99.9999%  { left: 0px; }
+	100%      { left: 960px; }
+}
+@-moz-keyframes cloud-group-3-animation {
+	0%        { left: 960px; }
+	100%      { left: -950px; }
+}
+
+
+
+
+
+@-moz-keyframes cloud-1-animation {
+	0%        { top: 0px; }
+	50% 	    { top: 10px; }
+	100%      { top: 0px; }
+}
+
+@-moz-keyframes cloud-2-animation {
+	0%        { top: -25px; }
+	50% 	 	 { top: 10px; }
+	100%      { top: -25px; }
+}
+
+
+
+@-moz-keyframes cloud-1-roNanimation {
+	0%        { -moz-transform:rotate(0deg);}
+	50% 	 	  { -moz-transform:rotate(3deg);}
+	100%      { -moz-transform:rotate(0deg);}
+}
+@-moz-keyframes cloud-2-roNanimation {
+	0%        { -moz-transform:rotate(0deg);}
+	50% 	    { -moz-transform:rotate(8deg);}
+	100%      { -moz-transform:rotate(0deg);}
+}
+@-moz-keyframes cloud-3-roNanimation {
+	0%        { -moz-transform:rotate(0deg);}
+	50% 	    { -moz-transform:rotate(4deg);}
+	100%      { -moz-transform:rotate(0deg);}
+}
+@-moz-keyframes cloud-4-roNanimation {
+	0%        { -moz-transform:rotate(0deg);}
+	50% 	    { -moz-transform:rotate(8deg);}
+	100%      { -moz-transform:rotate(0deg);}
+}

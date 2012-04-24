@@ -47,6 +47,6 @@ module Fstvl
 
     # Precompile *all* assets, except those that start with underscore
     # https://gist.github.com/1685685
-    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+    # config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   end
 end

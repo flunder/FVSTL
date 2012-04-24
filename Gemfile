@@ -24,13 +24,11 @@ gem 'libxml-ruby'
 gem 'json'
 gem 'memcache-client'
 gem 'tidy_ffi'
+gem 'compass-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'compass-rails'
-  gem 'compass-colors'
-  gem 'sassy-buttons'
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'

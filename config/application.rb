@@ -44,5 +44,9 @@ module Fstvl
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Precompile *all* assets, except those that start with underscore
+    # https://gist.github.com/1685685
+    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   end
 end

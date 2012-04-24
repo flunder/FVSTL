@@ -18,7 +18,9 @@
 #topPromo #cloud-group-2 {
     width: 960px; position: absolute; left: 960px;
 		@include animationCallPrefix('cloud-group-2-animation 30s infinite linear');		
+		/* @include animation('cloud-group-2-animation 30s infinite linear'); */
 }
+
 #topPromo #cloud-group-3 {
     width: 960px; position: absolute; left: 960px;
 		@include animationCallPrefix('cloud-group-3-animation 59s infinite linear');

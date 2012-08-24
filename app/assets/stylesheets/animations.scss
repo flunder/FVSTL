@@ -9,7 +9,7 @@
 #topPromo { position: relative; overflow: hidden; }
 #topPromo ul li { list-style-type: none; }
 
-#topPromo #clouds { position: absolute; top: 0px; z-index: 0; }
+#topPromo #clouds { position: absolute; top: 0px; z-index: 5; }
 
 #topPromo #cloud-group-1 { 
 		width:960px; position: absolute; left: 0px;
@@ -27,44 +27,70 @@
 }
 
 #topPromo .cloud-1 {
-    width: 172px;
-    height: 121px;
+    width: 180px;
+    height: 112px;
     background-image: url(../images/ad/cloud-1-shaded.png);
     position: absolute;
     top: 10px;
     left: 40px;
 		@include animationCallPrefix('cloud-1-animation 15s infinite ease-in-out');
 		@include animationCallPrefix('cloud-1-roNanimation 2s infinite ease-in-out');		
+		z-index: 5;
 }
 #topPromo .cloud-2 {
-    width: 121px;
-    height: 75px;
-    background-image: url(../images/ad/cloud-2.png);
+    width: 128px;
+    height: 83px;
+    background-image: url(../images/ad/cloud-2-shaded.png);
     position: absolute;
     top: -25px;
     left: 300px;
 		@include animationCallPrefix('cloud-2-animation 30s infinite ease-in-out');
 		@include animationCallPrefix('cloud-2-roNanimation 2s infinite ease-in-out');		
+		z-index: 5;		
 }
 #topPromo .cloud-3 {
-    width: 132px;
-    height: 105px;
-    background-image: url(../images/ad/cloud-3.png);
+    width: 161px;
+    height: 120px;
+    background-image: url(../images/ad/cloud-3-shaded.png);
     position: absolute;
     top: -5px;
     left: 530px;
 		@include animationCallPrefix('cloud-3-roNanimation 2s infinite ease-in-out');		 
+		z-index: 5;		
 }
 #topPromo .cloud-4 {
     width: 102px;
     height: 141px;
-    background-image: url(../images/ad/rabbit.png);
+    background-image: url(../images/ad/rabbit-shaded.png);
     position: absolute;
     top: 5px;
     left: 832px;
 		@include animationCallPrefix('cloud-4-roNanimation 3s infinite ease-in-out');		 
+		z-index: 5;		
 }
 
+#fstvlLogo { 
+	background: url("../images/ad/fstvl-logo.png") no-repeat scroll 0 0 transparent; height: 100px; left: 39%; position: absolute; top: 15px; width: 250px; z-index: 10; 
+	@include animationCallPrefix('logo-animation 10s infinite ease-in-out');	
+	/* @include animationCallPrefix('logo-animation2 30s infinite ease-in-out');	 */
+}
+
+/* logo */
+
+@-moz-keyframes logo-animation {
+	0% { -moz-transform:scale(1, 1); }
+	96% { -moz-transform:scale(1, 1); }
+	98% { -moz-transform:scale(1.1, 1.1); }
+	100% { -moz-transform:scale(1, 1); }	
+}
+
+@-moz-keyframes logo-animation2 {
+	0%        { top: 15px; }
+	49%       { top: 15px; }
+	50%       { top: 250px; }
+	99%       { top: 250px; }
+	100%      { top: 15px; }
+}
 
 /* FireFox Animations */
 

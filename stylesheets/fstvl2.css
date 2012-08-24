@@ -1,0 +1,97 @@
+/* #content .row { min-height: 200px; } */
+/* 1190 IMAC
+@media only screen and (min-width: 1190px) {
+	
+	header nav,
+	#subhead nav,
+	#content { width: 1190px; }
+	
+	#mainWrap.festivalIndex { float: right; width: 990px; }
+
+	@if $debug {
+			body::before{
+	    		content: ">1190px";
+					font-weight:bold;display:block;text-align:center;background:rgba(255,255,0,0.9); position:absolute;top:0;left:0;right:0;z-index:99;
+	  	}
+	}
+}
+ */
+/* >980 */
+@media only screen and (min-width: 980px) {
+  /* line 27, ../app/assets/stylesheets/fstvl2.scss */
+  header nav,
+  #subhead nav,
+  #content {
+    width: 960px !important;
+  }
+
+  /* line 29, ../app/assets/stylesheets/fstvl2.scss */
+  #mainWrap.festivalIndex {
+    float: right;
+    width: 792px !important;
+  }
+}
+/* TABLET */
+@media only screen and (min-width: 740px) and (max-width: 979px) {
+  /* line 45, ../app/assets/stylesheets/fstvl2.scss */
+  header nav,
+  #subhead nav,
+  #content {
+    width: 740px !important;
+  }
+
+  /* line 47, ../app/assets/stylesheets/fstvl2.scss */
+  #mainWrap.festivalIndex {
+    float: right;
+    width: 595px !important;
+  }
+}
+/* <739 */
+@media only screen and (max-width: 739px) {
+  /* line 63, ../app/assets/stylesheets/fstvl2.scss */
+  header nav,
+  #subhead nav,
+  #content {
+    width: 500px !important;
+  }
+
+  /* line 64, ../app/assets/stylesheets/fstvl2.scss */
+  #sidebar {
+    width: 100px !important;
+  }
+
+  /* line 65, ../app/assets/stylesheets/fstvl2.scss */
+  #mainWrap.festivalIndex {
+    float: right;
+    width: 360px !important;
+  }
+
+  /* line 67, ../app/assets/stylesheets/fstvl2.scss */
+  .row {
+    width: 100px !important;
+    margin-right: 20px !important;
+  }
+
+  /* line 68, ../app/assets/stylesheets/fstvl2.scss */
+  .row img {
+    width: 100px !important;
+  }
+
+  /* line 71, ../app/assets/stylesheets/fstvl2.scss */
+  #content .row .place,
+  #content h3,
+  #content .row time {
+    margin-left: 0px !important;
+    line-height: 1.3em;
+  }
+
+  /* line 73, ../app/assets/stylesheets/fstvl2.scss */
+  #content h3 {
+    font-size: 1.2em;
+  }
+
+  /* line 75, ../app/assets/stylesheets/fstvl2.scss */
+  #content .row {
+    min-height: 130px;
+  }
+}

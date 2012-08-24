@@ -1,0 +1,273 @@
+/* line 9, ../app/assets/stylesheets/animations.scss */
+#topPromo {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 10, ../app/assets/stylesheets/animations.scss */
+#topPromo ul li {
+  list-style-type: none;
+}
+
+/* line 12, ../app/assets/stylesheets/animations.scss */
+#topPromo #clouds {
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+}
+
+/* line 14, ../app/assets/stylesheets/animations.scss */
+#topPromo #cloud-group-1 {
+  width: 960px;
+  position: absolute;
+  left: 0px;
+  -webkit-animation: cloud-group-1-animation 30s infinite linear;
+  -moz-animation: cloud-group-1-animation 30s infinite linear;
+  -o-animation: cloud-group-1-animation 30s infinite linear;
+  -ms-animation: cloud-group-1-animation 30s infinite linear;
+  animation: cloud-group-1-animation 30s infinite linear;
+}
+
+/* line 18, ../app/assets/stylesheets/animations.scss */
+#topPromo #cloud-group-2 {
+  width: 960px;
+  position: absolute;
+  left: 960px;
+  -webkit-animation: cloud-group-2-animation 30s infinite linear;
+  -moz-animation: cloud-group-2-animation 30s infinite linear;
+  -o-animation: cloud-group-2-animation 30s infinite linear;
+  -ms-animation: cloud-group-2-animation 30s infinite linear;
+  animation: cloud-group-2-animation 30s infinite linear;
+  /* @include animation('cloud-group-2-animation 30s infinite linear'); */
+}
+
+/* line 24, ../app/assets/stylesheets/animations.scss */
+#topPromo #cloud-group-3 {
+  width: 960px;
+  position: absolute;
+  left: 960px;
+  -webkit-animation: cloud-group-3-animation 59s infinite linear;
+  -moz-animation: cloud-group-3-animation 59s infinite linear;
+  -o-animation: cloud-group-3-animation 59s infinite linear;
+  -ms-animation: cloud-group-3-animation 59s infinite linear;
+  animation: cloud-group-3-animation 59s infinite linear;
+}
+
+/* line 29, ../app/assets/stylesheets/animations.scss */
+#topPromo .cloud-1 {
+  width: 172px;
+  height: 121px;
+  background-image: url(../images/ad/cloud-1-shaded.png);
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  -webkit-animation: cloud-1-animation 15s infinite ease-in-out;
+  -moz-animation: cloud-1-animation 15s infinite ease-in-out;
+  -o-animation: cloud-1-animation 15s infinite ease-in-out;
+  -ms-animation: cloud-1-animation 15s infinite ease-in-out;
+  animation: cloud-1-animation 15s infinite ease-in-out;
+  -webkit-animation: cloud-1-roNanimation 2s infinite ease-in-out;
+  -moz-animation: cloud-1-roNanimation 2s infinite ease-in-out;
+  -o-animation: cloud-1-roNanimation 2s infinite ease-in-out;
+  -ms-animation: cloud-1-roNanimation 2s infinite ease-in-out;
+  animation: cloud-1-roNanimation 2s infinite ease-in-out;
+}
+
+/* line 39, ../app/assets/stylesheets/animations.scss */
+#topPromo .cloud-2 {
+  width: 121px;
+  height: 75px;
+  background-image: url(../images/ad/cloud-2.png);
+  position: absolute;
+  top: -25px;
+  left: 300px;
+  -webkit-animation: cloud-2-animation 30s infinite ease-in-out;
+  -moz-animation: cloud-2-animation 30s infinite ease-in-out;
+  -o-animation: cloud-2-animation 30s infinite ease-in-out;
+  -ms-animation: cloud-2-animation 30s infinite ease-in-out;
+  animation: cloud-2-animation 30s infinite ease-in-out;
+  -webkit-animation: cloud-2-roNanimation 2s infinite ease-in-out;
+  -moz-animation: cloud-2-roNanimation 2s infinite ease-in-out;
+  -o-animation: cloud-2-roNanimation 2s infinite ease-in-out;
+  -ms-animation: cloud-2-roNanimation 2s infinite ease-in-out;
+  animation: cloud-2-roNanimation 2s infinite ease-in-out;
+}
+
+/* line 49, ../app/assets/stylesheets/animations.scss */
+#topPromo .cloud-3 {
+  width: 132px;
+  height: 105px;
+  background-image: url(../images/ad/cloud-3.png);
+  position: absolute;
+  top: -5px;
+  left: 530px;
+  -webkit-animation: cloud-3-roNanimation 2s infinite ease-in-out;
+  -moz-animation: cloud-3-roNanimation 2s infinite ease-in-out;
+  -o-animation: cloud-3-roNanimation 2s infinite ease-in-out;
+  -ms-animation: cloud-3-roNanimation 2s infinite ease-in-out;
+  animation: cloud-3-roNanimation 2s infinite ease-in-out;
+}
+
+/* line 58, ../app/assets/stylesheets/animations.scss */
+#topPromo .cloud-4 {
+  width: 102px;
+  height: 141px;
+  background-image: url(../images/ad/rabbit.png);
+  position: absolute;
+  top: 5px;
+  left: 832px;
+  -webkit-animation: cloud-4-roNanimation 3s infinite ease-in-out;
+  -moz-animation: cloud-4-roNanimation 3s infinite ease-in-out;
+  -o-animation: cloud-4-roNanimation 3s infinite ease-in-out;
+  -ms-animation: cloud-4-roNanimation 3s infinite ease-in-out;
+  animation: cloud-4-roNanimation 3s infinite ease-in-out;
+}
+
+/* FireFox Animations */
+@-moz-keyframes cloud-group-1-animation {
+  /* line 72, ../app/assets/stylesheets/animations.scss */
+  0% {
+    left: 0px;
+  }
+
+  /* line 73, ../app/assets/stylesheets/animations.scss */
+  99.9999% {
+    left: -960px;
+  }
+
+  /* line 74, ../app/assets/stylesheets/animations.scss */
+  100% {
+    left: 0px;
+  }
+}
+
+@-moz-keyframes cloud-group-2-animation {
+  /* line 77, ../app/assets/stylesheets/animations.scss */
+  0% {
+    left: 960px;
+  }
+
+  /* line 78, ../app/assets/stylesheets/animations.scss */
+  99.9999% {
+    left: 0px;
+  }
+
+  /* line 79, ../app/assets/stylesheets/animations.scss */
+  100% {
+    left: 960px;
+  }
+}
+
+@-moz-keyframes cloud-group-3-animation {
+  /* line 82, ../app/assets/stylesheets/animations.scss */
+  0% {
+    left: 960px;
+  }
+
+  /* line 83, ../app/assets/stylesheets/animations.scss */
+  100% {
+    left: -950px;
+  }
+}
+
+@-moz-keyframes cloud-1-animation {
+  /* line 91, ../app/assets/stylesheets/animations.scss */
+  0% {
+    top: 0px;
+  }
+
+  /* line 92, ../app/assets/stylesheets/animations.scss */
+  50% {
+    top: 10px;
+  }
+
+  /* line 93, ../app/assets/stylesheets/animations.scss */
+  100% {
+    top: 0px;
+  }
+}
+
+@-moz-keyframes cloud-2-animation {
+  /* line 97, ../app/assets/stylesheets/animations.scss */
+  0% {
+    top: -25px;
+  }
+
+  /* line 98, ../app/assets/stylesheets/animations.scss */
+  50% {
+    top: 10px;
+  }
+
+  /* line 99, ../app/assets/stylesheets/animations.scss */
+  100% {
+    top: -25px;
+  }
+}
+
+@-moz-keyframes cloud-1-roNanimation {
+  /* line 105, ../app/assets/stylesheets/animations.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 106, ../app/assets/stylesheets/animations.scss */
+  50% {
+    -moz-transform: rotate(3deg);
+  }
+
+  /* line 107, ../app/assets/stylesheets/animations.scss */
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes cloud-2-roNanimation {
+  /* line 110, ../app/assets/stylesheets/animations.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 111, ../app/assets/stylesheets/animations.scss */
+  50% {
+    -moz-transform: rotate(8deg);
+  }
+
+  /* line 112, ../app/assets/stylesheets/animations.scss */
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes cloud-3-roNanimation {
+  /* line 115, ../app/assets/stylesheets/animations.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 116, ../app/assets/stylesheets/animations.scss */
+  50% {
+    -moz-transform: rotate(4deg);
+  }
+
+  /* line 117, ../app/assets/stylesheets/animations.scss */
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes cloud-4-roNanimation {
+  /* line 120, ../app/assets/stylesheets/animations.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 121, ../app/assets/stylesheets/animations.scss */
+  50% {
+    -moz-transform: rotate(8deg);
+  }
+
+  /* line 122, ../app/assets/stylesheets/animations.scss */
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}

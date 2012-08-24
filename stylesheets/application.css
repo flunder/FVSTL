@@ -1,0 +1,482 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+/* @group global reset */
+/* line 10, ../app/assets/stylesheets/application.scss */
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 11, ../app/assets/stylesheets/application.scss */
+a, a img {
+  border: none;
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 12, ../app/assets/stylesheets/application.scss */
+input, textarea, button {
+  outline: none;
+  resize: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* @end */
+/* line 15, ../app/assets/stylesheets/application.scss */
+a {
+  color: #1c8ef0;
+}
+
+/* line 16, ../app/assets/stylesheets/application.scss */
+a:hover {
+  color: #55a9f1;
+}
+
+/* line 17, ../app/assets/stylesheets/application.scss */
+a:active {
+  color: #126cba;
+}
+
+/* line 18, ../app/assets/stylesheets/application.scss */
+a#logo {
+  color: #ff003c;
+  font-family: "bello-caps";
+  float: left;
+  font-size: 4em;
+  top: 7px;
+  padding-left: 0;
+  left: 2px;
+}
+
+/* line 19, ../app/assets/stylesheets/application.scss */
+a#logo:hover {
+  background: none;
+  color: #FF203C;
+}
+
+/* line 20, ../app/assets/stylesheets/application.scss */
+h1 {
+  font: 28px;
+  color: #222;
+}
+
+/* line 21, ../app/assets/stylesheets/application.scss */
+h2 {
+  font-size: 2.8em;
+  font-family: "bello-caps";
+  clear: both;
+  color: #333333;
+  float: left;
+  font-weight: normal;
+  margin: 35px 10px 20px 0;
+  text-shadow: 0 0 0 #FFFFFF;
+  width: 100%;
+}
+
+/* line 22, ../app/assets/stylesheets/application.scss */
+h3 {
+  color: #333333;
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 0 0 0 #FFFFFF;
+}
+
+/* line 23, ../app/assets/stylesheets/application.scss */
+h4 {
+  color: #333333;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 0 0 0 #FFFFFF;
+}
+
+/* line 25, ../app/assets/stylesheets/application.scss */
+.hidden {
+  display: none;
+}
+
+/* line 27, ../app/assets/stylesheets/application.scss */
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: subpixel-antialiased;
+  font-smoothing: subpixel-antialiased;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* line 38, ../app/assets/stylesheets/application.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'ff-meta-web-pro','helvetica',sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #78787b;
+}
+
+/* line 39, ../app/assets/stylesheets/application.scss */
+body header {
+  background: #1e1f23;
+  background: #1E1F23;
+}
+
+/* line 40, ../app/assets/stylesheets/application.scss */
+body #subhead {
+  background: #1e1f23;
+  background: #ddd;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+/* line 41, ../app/assets/stylesheets/application.scss */
+#content {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* line 42, ../app/assets/stylesheets/application.scss */
+footer {
+  border-top: 1px solid #ddd;
+  width: 960px;
+  padding: 0 15px;
+  margin: 19px auto 20px;
+  clear: both;
+}
+
+/* @group navigation */
+/* line 46, ../app/assets/stylesheets/application.scss */
+header nav {
+  text-align: right;
+  width: 970px;
+  height: 55px;
+  margin: 0 auto;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none;
+}
+
+/* line 56, ../app/assets/stylesheets/application.scss */
+header nav a {
+  position: relative;
+  line-height: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+  text-align: right;
+  height: 29px;
+  padding: 13px 15px;
+  float: right;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+/* line 70, ../app/assets/stylesheets/application.scss */
+#subhead nav {
+  text-align: right;
+  width: 970px;
+  height: 35px;
+  margin: 0 auto;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none;
+}
+
+/* line 80, ../app/assets/stylesheets/application.scss */
+#subhead nav li {
+  background: GhostWhite;
+  color: #1C8EF0;
+  float: left;
+  font-size: 1em;
+  height: 9px;
+  line-height: 15px;
+  padding: 13px 15px;
+  position: relative;
+  text-align: right;
+  text-shadow: 1px 1px 0 #fff;
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* line 99, ../app/assets/stylesheets/application.scss */
+#subhead nav a.current {
+  border-bottom: 1px solid #ff003c;
+}
+
+/* line 101, ../app/assets/stylesheets/application.scss */
+header nav a:hover {
+  background: #111;
+}
+
+/* line 102, ../app/assets/stylesheets/application.scss */
+header nav a strong {
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* line 103, ../app/assets/stylesheets/application.scss */
+header nav a em {
+  display: block;
+  font-style: normal;
+}
+
+/* line 105, ../app/assets/stylesheets/application.scss */
+#content .row {
+  float: left;
+  margin-right: 30px;
+  width: 168px;
+  min-height: 175px;
+  margin-bottom: 10px;
+  font-size: 0.7em;
+  color: #78787B;
+  line-height: 16px;
+}
+
+/* #content .row:nth-child(5n+5) { margin-right: 0px; } */
+/* line 107, ../app/assets/stylesheets/application.scss */
+#content #mainWrap {
+  width: 990px;
+}
+
+/* line 108, ../app/assets/stylesheets/application.scss */
+#content h3 {
+  float: left;
+  clear: both;
+  margin: 0 0 0 5px;
+}
+
+/* line 109, ../app/assets/stylesheets/application.scss */
+#content .row img {
+  border-radius: 3px;
+  width: 172px;
+}
+
+/* line 111, ../app/assets/stylesheets/application.scss */
+#content .row .festImage {
+  float: left;
+}
+
+/* line 112, ../app/assets/stylesheets/application.scss */
+#content .row time {
+  float: left;
+  clear: both;
+  margin-left: 5px;
+}
+
+/* line 113, ../app/assets/stylesheets/application.scss */
+#content .row .place {
+  float: left;
+  clear: both;
+  margin-left: 5px;
+}
+
+/* line 115, ../app/assets/stylesheets/application.scss */
+#content #actsPage .col {
+  float: left;
+  width: 17%;
+  margin-right: 28px;
+}
+
+/* line 116, ../app/assets/stylesheets/application.scss */
+#content #actsPage .header {
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* line 118, ../app/assets/stylesheets/application.scss */
+#content ul.acts li {
+  list-style-type: none;
+}
+
+/* line 120, ../app/assets/stylesheets/application.scss */
+#mainWrap.festivalIndex {
+  float: right;
+  width: 795px;
+  margin-bottom: 10px;
+}
+
+/* line 122, ../app/assets/stylesheets/application.scss */
+#sidebar {
+  position: relative;
+  width: 145px;
+  float: left;
+  margin-bottom: 20px;
+}
+
+/* line 123, ../app/assets/stylesheets/application.scss */
+#sidebar ul li {
+  list-style-type: none;
+}
+
+/* line 124, ../app/assets/stylesheets/application.scss */
+#sidebar ul li a {
+  position: relative;
+}
+
+/* line 125, ../app/assets/stylesheets/application.scss */
+#sidebar ul li a.selected {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* line 126, ../app/assets/stylesheets/application.scss */
+#sidebar ul li a.selected:hover {
+  color: #1C8EF0;
+}
+
+/* line 127, ../app/assets/stylesheets/application.scss */
+#sidebar ul li a i {
+  color: #DDDDDD;
+  font-size: 0.8em;
+  font-style: normal;
+  letter-spacing: 1px;
+  margin-left: 0;
+  position: relative;
+  top: -1px;
+}
+
+/* line 128, ../app/assets/stylesheets/application.scss */
+#sidebar h4.first {
+  margin-top: 0;
+}
+
+/* line 129, ../app/assets/stylesheets/application.scss */
+#sidebar h4 {
+  margin-top: 15px;
+}
+
+/* line 131, ../app/assets/stylesheets/application.scss */
+#sidebar #showAll {
+  margin-bottom: 15px;
+  width: 100%;
+  float: left;
+  font-family: "bello-caps";
+  font-size: 2em;
+}
+
+/* line 133, ../app/assets/stylesheets/application.scss */
+#search {
+  background: url("http://www.bikeshd.co.uk/images/search_field.gif") no-repeat scroll 0 -22px transparent;
+  border: medium none;
+  font-size: 12px;
+  height: 18px;
+  padding: 2px 10px 2px 21px;
+  width: 149px;
+  position: relative;
+  right: 20px;
+  top: 8px;
+}
+
+/* ticker */
+/* line 146, ../app/assets/stylesheets/application.scss */
+.counter {
+  float: right;
+  margin-bottom: 15px;
+  position: absolute;
+  right: 17px;
+  top: 35px;
+  color: #333333;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 0 0 0 #FFFFFF;
+}
+
+/* line 147, ../app/assets/stylesheets/application.scss */
+.counter-wrap {
+  height: 11px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  top: 2px;
+}
+
+/* line 148, ../app/assets/stylesheets/application.scss */
+.counter-wrap .counter-number {
+  height: 220px;
+  width: 8px;
+  position: relative;
+  background-image: url("../images/counter-new.png");
+  float: left;
+}
+
+/* line 149, ../app/assets/stylesheets/application.scss */
+.counter-wrap #points {
+  display: none;
+}
+
+/* line 150, ../app/assets/stylesheets/application.scss */
+#counter-label {
+  float: left;
+  margin-right: 5px;
+}
+
+/* line 153, ../app/assets/stylesheets/application.scss */
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+/* line 162, ../app/assets/stylesheets/application.scss */
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+/* line 170, ../app/assets/stylesheets/application.scss */
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+/* line 181, ../app/assets/stylesheets/application.scss */
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+/* line 189, ../app/assets/stylesheets/application.scss */
+#content .row time {
+  background: none repeat scroll 0 0 #1E1F23;
+  clear: both;
+  color: white;
+  float: right;
+  left: 4px;
+  margin-left: 0;
+  padding: 2px 10px;
+  position: relative;
+  top: 3px;
+}

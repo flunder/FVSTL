@@ -3,6 +3,9 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_internal = Encoding::UTF_8
 end
 
+# compile your scss & sass via
+# compass watch from the project root 
+
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
@@ -24,12 +27,12 @@ gem 'libxml-ruby'
 gem 'json'
 gem 'memcache-client'
 gem 'tidy_ffi'
-gem 'compass-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
+  gem 'compass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end
@@ -38,4 +41,5 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
 

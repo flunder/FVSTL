@@ -1,0 +1,84 @@
+/* line 15, app/assets/stylesheets/fstvl1.sass */
+#topPromo {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 960px;
+  height: 200px;
+  background: #dddddd;
+  margin: 15px auto -15px auto;
+  background: white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#96eaf7), to(white));
+  background: -moz-linear-gradient(top, #96eaf7, white);
+}
+
+/* line 23, app/assets/stylesheets/fstvl1.sass */
+#bottomPromo {
+  width: 960px;
+  margin: 20px auto 15px auto;
+  clear: both;
+}
+
+/* line 28, app/assets/stylesheets/fstvl1.sass */
+#bottomPromo .miniPromo {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 230px;
+  height: 100px;
+  background: #00b4e3;
+  display: inline-block;
+  margin-right: 10px;
+  background: #5cd4f2;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#00b4e3), to(#5cd4f2));
+  background: -moz-linear-gradient(top, #00b4e3, #5cd4f2);
+}
+
+/* line 37, app/assets/stylesheets/fstvl1.sass */
+#bottomPromo .miniPromo:nth-child(4) {
+  margin-right: 0px;
+}
+
+/* line 40, app/assets/stylesheets/fstvl1.sass */
+#bottomAdContainer {
+  margin: 0px auto;
+  width: 100%;
+  text-align: center;
+  float: left;
+}
+
+/* line 46, app/assets/stylesheets/fstvl1.sass */
+#bottomAdContainer #bottomAd {
+  position: relative;
+  left: 80px;
+}
+
+@media screen and (min-width: 740px) and (max-width: 979px) {
+  /* line 53, app/assets/stylesheets/fstvl1.sass */
+  #topPromo, #bottomPromo {
+    width: 740px;
+  }
+
+  /* line 55, app/assets/stylesheets/fstvl1.sass */
+  #bottomPromo .miniPromo {
+    width: 175px;
+  }
+
+  /* line 57, app/assets/stylesheets/fstvl1.sass */
+  #bottomAdContainer #bottomAd {
+    left: 0;
+  }
+}
+@media screen and (max-width: 739px) {
+  /* line 62, app/assets/stylesheets/fstvl1.sass */
+  #topPromo, #bottomPromo {
+    width: 500px;
+  }
+
+  /* line 64, app/assets/stylesheets/fstvl1.sass */
+  #bottomPromo .miniPromo {
+    width: 115px;
+  }
+}
